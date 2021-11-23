@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chrometesting", "First work with selenium\Chrometesting.csproj", "{72965450-F0AE-4286-B1F9-02D2E6B314A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewModelTestChrome", "First work with selenium\NewModelTestChrome.csproj", "{72965450-F0AE-4286-B1F9-02D2E6B314A1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operatesting", "Operatesting\Operatesting.csproj", "{FA1AE1A8-80F4-448D-BACE-2D7EF4F78843}"
 EndProject
