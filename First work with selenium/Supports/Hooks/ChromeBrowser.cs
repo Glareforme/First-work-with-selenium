@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.Extensions;
 
-namespace NUnitTestProject1.Support
+namespace First_work_with_selenium.Supports.Hooks
 {
     internal static class ChromeBrowser
     {

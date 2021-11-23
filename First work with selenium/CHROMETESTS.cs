@@ -1,34 +1,30 @@
-using First_work_with_selenium.Supports.Hooks;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using System;
-using System.Threading;
+using First_work_with_selenium.Supports.Hooks;
+using First_work_with_selenium.Supports.PageObject.Actions;
 
 namespace First_work_with_selenium
 {
     public class RegistrationTests : Hooks
     {
-        private IWebDriver driverforchrome;
-
-        //private readonly By _bubs = By.CssSelector(""); nauchtsya 
 
         [Test]
-        public void ÑheckingTransitionFromMainPageToRegistration()
+        public void IsRegistrationpageOpensFromMainPage()
         {
-           
+            MainPage.ClickOnRegistButton();
+            Assert.IsTrue(MainPage.IsURLCorrected());
         }
         [Test]
         public void ÑheckingTransitionFromRegistrationToAuthorization()
         {
-         
+
         }
         [Test]
-        public void EnteringValidValuesIntoRegistrationFieldsFirstPage() //work 
+        public void EnteringValidValuesIntoRegistrationFieldsFirstPage()
         {
-       
+
         }
         [Test]
-        public void EnteringNotValidValuesIntoRegistrationFieldsFirstPage() 
+        public void EnteringNotValidValuesIntoRegistrationFieldsFirstPage()
         {
         }
 
