@@ -7,39 +7,40 @@ namespace FirefoxTesting.Support.Hooks
 {
     public class FFBrowser
     {
-        private static IWebDriver driverforff;
+        private static IWebDriver _driverforff;
+
         internal static void CreateDriver()
         {
             var option = new FirefoxOptions();
             option.AddArgument("--start-maximized");
-            driverforff = new FirefoxDriver(option);
-            driverforff.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            _driverforff = new FirefoxDriver(option);
+            _driverforff.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
         }
         internal static IWebDriver GetDriver()
         {
-            if (driverforff == null)
+            if (_driverforff == null)
                 CreateDriver();
 
-            return driverforff;
+            return _driverforff;
         }
         internal static void CleanDriver()
         {
             // Open new empty tab.
-            driverforff.ExecuteJavaScript("window.open('');");
+            _driverforff.ExecuteJavaScript("window.open('');");
 
             // Close all tabs but one tab and delete all cookies.
-            for (var tabs = driverforff.WindowHandles; tabs.Count > 1; tabs = driverforff.WindowHandles)
+            for (var tabs = _driverforff.WindowHandles; tabs.Count > 1; tabs = _driverforff.WindowHandles)
             {
-                driverforff.SwitchTo().Window(tabs[0]);
-                driverforff.Manage().Cookies.DeleteAllCookies();
-                driverforff.Close();
+                _driverforff.SwitchTo().Window(tabs[0]);
+                _driverforff.Manage().Cookies.DeleteAllCookies();
+                _driverforff.Close();
             }
             // Switch to empty tab.
-            driverforff.SwitchTo().Window(driverforff.WindowHandles[0]);
+            _driverforff.SwitchTo().Window(_driverforff.WindowHandles[0]);
         }
 
-        internal static void CloseDriver() => driverforff.Quit();
-        internal static void GoBackOneStep() => driverforff.Navigate().Back();
+        internal static void CloseDriver() => _driverforff.Quit();
+        internal static void GoBackOneStep() => _driverforff.Navigate().Back();
 
     }
 }

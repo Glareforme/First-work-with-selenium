@@ -11,7 +11,6 @@ namespace FirefoxTesting.Support.Actions
                 return true;
             return false;
         }
-
         internal static bool IsURLCorrected() => RegistrationLoc.CorrectURL.Equals(FFBrowser.GetDriver().Url);
         internal static void ClickOnUpperSingInButton() => FFBrowser.GetDriver().FindElement(RegistrationLoc.UpperSingInButton).Click();
         internal static void FIrstNameInput() => FFBrowser.GetDriver().FindElement(RegistrationLoc.FirstnameField).SendKeys("");
