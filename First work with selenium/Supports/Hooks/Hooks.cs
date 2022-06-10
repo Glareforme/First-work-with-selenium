@@ -8,7 +8,7 @@ namespace First_work_with_selenium.Supports.Hooks
         [SetUp]
         public void Setup()
         {
-            ChromeBrowser.GetDriver().Navigate().GoToUrl("https://newbookmodels.com/auth/signin");
+            ChromeBrowser.GetDriver().Navigate().GoToUrl("https://newbookmodels.com/");
         }
         [TearDown]
         public void TearDown()

@@ -1,10 +1,13 @@
 ﻿using OpenQA.Selenium;
 
 
-namespace First_work_with_selenium.Supports.PageObject.Locators
+namespace First_work_with_selenium.Supports.PageObjects.Locators
 {
     internal static class RegistrationLoc
     {
+        internal static readonly string CorrectURL = "https://newbookmodels.com/join";
+
+        internal static readonly By PageTitle = By.XPath("//h1[text()='Client Signup']");
         internal static readonly By UpperSingInButton = By.XPath("//a [@href='/auth/signin'] [text()='Sign In']");
         internal static readonly By FirstnameField = By.XPath("//input[@name='first_name']");
         internal static readonly By LastnameField = By.XPath("//input[@name='last_name']");
