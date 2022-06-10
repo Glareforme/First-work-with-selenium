@@ -1,23 +1,21 @@
 using NUnit.Framework;
-using OpenQA.Selenium;
+using Operatesting.Support.Hooks;
+using Operatesting.Support.PageObjects.Methods;
 
 namespace Operatesting
 {
-    public class Tests
+    public class Tests : Hooks 
     {
-        private IWebDriver opera;
-        [SetUp]
-        public void Setup()
-        {
-            opera = new OpenQA.Selenium.Opera.OperaDriver();
-            opera.Navigate().GoToUrl("https://www.google.com/");
-
-        }
-
         [Test]
-        public void Test1()
+        public void IsUpperButtonsWork()
         {
-            Assert.Pass();
+            MainPageMeth.ClickOnRegistButton();
+            Assert.IsTrue(RegistrationPageMeth.IsRegistrationPage());
+            OperaBrowser.GoBackOneStep();
+            MainPageMeth.ClickOnSingInButton();
+            Assert.IsTrue(SingInPageMeth.IsClientSingInPage());
+            OperaBrowser.GoBackOneStep();
+            MainPageMeth.ClickOnBrowseTalantButton();
         }
     }
 }
