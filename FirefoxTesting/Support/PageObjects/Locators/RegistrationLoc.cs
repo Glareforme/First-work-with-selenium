@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 
 
-namespace First_work_with_selenium.Supports.PageObjects.Locators
+namespace FirefoxTesting.Support.Locators
 {
     public static class RegistrationLoc
     {

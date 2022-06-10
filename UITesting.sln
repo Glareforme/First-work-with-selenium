@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewModelTestChrome", "First
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operatesting", "Operatesting\Operatesting.csproj", "{FA1AE1A8-80F4-448D-BACE-2D7EF4F78843}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirefoxTesting", "FirefoxTesting\FirefoxTesting.csproj", "{19F59FB4-2101-4FDD-B797-E89AA415DE17}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{57DC8C4E-0B09-4227-9C00-7C0C1CE92C6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewModelTestFireFox", "FirefoxTesting\NewModelTestFireFox.csproj", "{19F59FB4-2101-4FDD-B797-E89AA415DE17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
