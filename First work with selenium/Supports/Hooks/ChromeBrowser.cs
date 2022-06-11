@@ -1,50 +1,59 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 
-namespace First_work_with_selenium.Supports.Hooks
+namespace ChromeTests.Supports.Hooks
 {
-    internal static class ChromeBrowser
+    public static class ChromeBrowser
     {
-        private static IWebDriver _driver;
+        private static IWebDriver _chromedriver;
 
+        private static Actions action;
         private static void CreateDriver()
         {
             var option = new ChromeOptions();
             option.AddArguments("--start-maximized");
-            _driver = new ChromeDriver(option);
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            _chromedriver = new ChromeDriver(option);
+            _chromedriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         internal static IWebDriver GetDriver()
         {
-            if (_driver == null)
+            if (_chromedriver == null)
                 CreateDriver();
 
-            return _driver;
+            return _chromedriver;
         }
 
         internal static void CleanDriver()
         {
             // Open new empty tab.
-            _driver.ExecuteJavaScript("window.open('');");
+            _chromedriver.ExecuteJavaScript("window.open('');");
 
             // Close all tabs but one tab and delete all cookies.
-            for (var tabs = _driver.WindowHandles; tabs.Count > 1; tabs = _driver.WindowHandles)
+            for (var tabs = _chromedriver.WindowHandles; tabs.Count > 1; tabs = _chromedriver.WindowHandles)
             {
-                _driver.SwitchTo().Window(tabs[0]);
-                _driver.Manage().Cookies.DeleteAllCookies();
-                _driver.Close();
+                _chromedriver.SwitchTo().Window(tabs[0]);
+                _chromedriver.Manage().Cookies.DeleteAllCookies();
+                _chromedriver.Close();
             }
 
             // Switch to empty tab.
-            _driver.SwitchTo().Window(_driver.WindowHandles[0]);
+            _chromedriver.SwitchTo().Window(_chromedriver.WindowHandles[0]);
         }
 
-        internal static void CloseDriver()
+        internal static void CloseDriver() => _chromedriver.Quit();
+        internal static void GoBackOneStep() => _chromedriver.Navigate().Back();
+        internal static void GoForwardOneStep() => _chromedriver.Navigate().Forward(); 
+
+        internal static void MoveToElement(By selector)
         {
-            _driver.Quit();
-        }
+            action = new Actions(_chromedriver);
+            var element = _chromedriver.FindElement(selector);
+            action.MoveToElement(element);
+            action.Perform();
+        } 
     }
 }

@@ -1,21 +1,22 @@
+using FirefoxTesting.Support.Actions;
 using NUnit.Framework;
-using Operatesting.Support.Hooks;
-using Operatesting.Support.PageObjects.Methods;
+using FirefoxTesting.Support.Hooks;
 
-namespace Operatesting
+namespace FirefoxTesting
 {
-    public class Tests : Hooks 
+    public class Tests : Hooks
     {
         [Test]
-        public void IsUpperButtonsWork()
+        public void ÑheckingTransitionFromMainPageToRegistration()
         {
             MainPageMeth.ClickOnRegistButton();
             Assert.IsTrue(RegistrationPageMeth.IsRegistrationPage());
             GoBackOneStep();
             MainPageMeth.ClickOnSingInButton();
-            Assert.IsTrue(SingInPageMeth.IsClientSingInPage());
+            Assert.IsTrue(ClientSingInPageMeth.IsClientSingInPage());
             GoBackOneStep();
             MainPageMeth.ClickOnBrowseTalantButton();
+            GoBackOneStep();
         }
     }
 }
