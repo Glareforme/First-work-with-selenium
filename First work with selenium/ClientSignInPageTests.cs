@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
-using First_work_with_selenium.Supports.Hooks;
-using First_work_with_selenium.Supports.PageObjects.Actions;
+using ChromeTests.Supports.Hooks;
+using ChromeTests.Supports.PageObjects.Actions;
 
-namespace First_work_with_selenium
+namespace ChromeTests
 {
-    public class ClientSignInTests: Hooks
+    public class ClientSignInTests : Hooks
     {
         [Test]
         public void IsRegistrationpageOpensFromMainPage()

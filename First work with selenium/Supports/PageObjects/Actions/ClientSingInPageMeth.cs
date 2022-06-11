@@ -1,7 +1,7 @@
-﻿using First_work_with_selenium.Supports.Hooks;
+﻿using ChromeTests.Supports.Hooks;
 using FirefoxTesting.Support.Locators;
 
-namespace First_work_with_selenium.Supports.PageObjects.Actions
+namespace ChromeTests.Supports.PageObjects.Actions
 {
     internal class ClientSingInPageMeth
     {

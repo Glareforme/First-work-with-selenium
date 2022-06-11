@@ -8,6 +8,7 @@ namespace FirefoxTesting.Support.Locators
         public static readonly By SingInButton = By.XPath("//a [@href='/auth/signin']");
         public static readonly By BrowseTalentButton = By.XPath("//a [text()='Browse Talent'] ");
         public static readonly By EmailInputField = By.XPath("//input [@name='email']");
+        public static readonly By SubmitSendEmail = By.XPath("//button[@type='submit']");
         public static readonly By SecondSingUpButton = By.XPath("(//button[text()='Sign Up'])[2]");
         public static readonly By ThirdSingUpButton = By.XPath("(//button[text()='Sign Up'])[3]");
     }

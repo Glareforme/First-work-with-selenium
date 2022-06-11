@@ -1,26 +1,38 @@
-﻿using First_work_with_selenium.Supports.Hooks;
+﻿using ChromeTests.Supports.Hooks;
 using FirefoxTesting.Support.Locators;
 using System;
-namespace First_work_with_selenium.Supports.PageObjects.Actions
+namespace ChromeTests.Supports.PageObjects.Actions
 {
     public static class MainPageMeth
     {
         public static void ClickOnRegistButton() => ChromeBrowser.GetDriver().FindElement(MainPageLoc.SingUpButton).Click();
         public static void ClickOnSingInButton() => ChromeBrowser.GetDriver().FindElement(MainPageLoc.SingInButton).Click();
         public static void ClickOnBrowseTalantButton() => ChromeBrowser.GetDriver().FindElement(MainPageLoc.BrowseTalentButton).Click();
-        public static void ClickSecongRegistButton() => ChromeBrowser.GetDriver().FindElement(MainPageLoc.SecondSingUpButton).Click();
-        public static void ClickThirdRegistButton() => ChromeBrowser.GetDriver().FindElement(MainPageLoc.ThirdSingUpButton).Click();
-        public static void TryClickSecongRegistButton()
+        public static void InputToEmailField(string email)
         {
-            try
-            {
-                ClickSecongRegistButton();
-            }
-            catch (OpenQA.Selenium.NoSuchElementException)
-            {
-                ChromeBrowser.MoveToElement(MainPageLoc.SecondSingUpButton);
-                ClickSecongRegistButton();
-            }
+            ChromeBrowser.GetDriver().FindElement(MainPageLoc.EmailInputField).SendKeys(email);
+        }
+        public static void SubmitToSendEmail() 
+        {
+            ChromeBrowser.MoveToElement(MainPageLoc.SubmitSendEmail);
+            ChromeBrowser.GetDriver().FindElement(MainPageLoc.SubmitSendEmail).Click(); 
+        } 
+        public static void ClickSecongRegistButton() 
+        {
+            ChromeBrowser.MoveToElement(MainPageLoc.SecondSingUpButton);
+            ChromeBrowser.GetDriver().FindElement(MainPageLoc.SecondSingUpButton).Click();
+
+        }
+        public static void ClickThirdRegistButton()
+        {
+            ChromeBrowser.MoveToElement(MainPageLoc.ThirdSingUpButton);
+            ChromeBrowser.GetDriver().FindElement(MainPageLoc.ThirdSingUpButton).Click();
+        }
+        public static bool IsEmailFieldIsEmpty()
+        {
+            if (ChromeBrowser.GetDriver().FindElement(MainPageLoc.SubmitSendEmail).Enabled)
+                return true; 
+            return false;
         }
     }
 }

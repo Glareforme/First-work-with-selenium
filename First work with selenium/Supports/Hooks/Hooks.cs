@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 
-namespace First_work_with_selenium.Supports.Hooks
+namespace ChromeTests.Supports.Hooks
 {
     public class Hooks
     {

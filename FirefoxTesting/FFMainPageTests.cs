@@ -16,6 +16,7 @@ namespace FirefoxTesting
             Assert.IsTrue(ClientSingInPageMeth.IsClientSingInPage());
             GoBackOneStep();
             MainPageMeth.ClickOnBrowseTalantButton();
+            GoBackOneStep();
         }
     }
 }

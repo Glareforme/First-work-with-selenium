@@ -1,14 +1,14 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.Extensions;
+using OpenQA.Selenium.Interactions;
 using System;
 
 namespace FirefoxTesting.Support.Hooks
 {
-    public class FFBrowser
+    public class FFBrowser 
     {
         private static IWebDriver _driverforff;
-
         internal static void CreateDriver()
         {
             var option = new FirefoxOptions();
@@ -41,6 +41,5 @@ namespace FirefoxTesting.Support.Hooks
 
         internal static void CloseDriver() => _driverforff.Quit();
         internal static void GoBackOneStep() => _driverforff.Navigate().Back();
-
     }
 }
