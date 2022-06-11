@@ -1,6 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 
@@ -10,12 +11,13 @@ namespace First_work_with_selenium.Supports.Hooks
     {
         private static IWebDriver _chromedriver;
 
+        private static Actions action;
         private static void CreateDriver()
         {
             var option = new ChromeOptions();
             option.AddArguments("--start-maximized");
             _chromedriver = new ChromeDriver(option);
-            _chromedriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            _chromedriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         internal static IWebDriver GetDriver()
@@ -45,7 +47,14 @@ namespace First_work_with_selenium.Supports.Hooks
 
         internal static void CloseDriver() => _chromedriver.Quit();
         internal static void GoBackOneStep() => _chromedriver.Navigate().Back();
+        internal static void GoForwardOneStep() => _chromedriver.Navigate().Forward(); 
 
-
+        internal static void MoveToElement(By selector)
+        {
+            action = new Actions(_chromedriver);
+            var element = _chromedriver.FindElement(selector);
+            action.MoveToElement(element);
+            action.Perform();
+        } 
     }
 }

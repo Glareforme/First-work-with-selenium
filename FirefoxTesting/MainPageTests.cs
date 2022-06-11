@@ -1,7 +1,6 @@
 using FirefoxTesting.Support.Actions;
 using NUnit.Framework;
 using FirefoxTesting.Support.Hooks;
-using System.Threading;
 
 namespace FirefoxTesting
 {

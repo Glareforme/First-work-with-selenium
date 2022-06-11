@@ -1,5 +1,5 @@
 ﻿using First_work_with_selenium.Supports.Hooks;
-using First_work_with_selenium.Supports.PageObjects.Locators;
+using FirefoxTesting.Support.Locators;
 
 namespace First_work_with_selenium.Supports.PageObjects.Actions
 {

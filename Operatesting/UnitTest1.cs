@@ -11,10 +11,10 @@ namespace Operatesting
         {
             MainPageMeth.ClickOnRegistButton();
             Assert.IsTrue(RegistrationPageMeth.IsRegistrationPage());
-            OperaBrowser.GoBackOneStep();
+            GoBackOneStep();
             MainPageMeth.ClickOnSingInButton();
             Assert.IsTrue(SingInPageMeth.IsClientSingInPage());
-            OperaBrowser.GoBackOneStep();
+            GoBackOneStep();
             MainPageMeth.ClickOnBrowseTalantButton();
         }
     }

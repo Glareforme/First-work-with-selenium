@@ -12,22 +12,5 @@ namespace First_work_with_selenium
             MainPageMeth.ClickOnRegistButton();
             Assert.IsTrue(RegistrationPageMeth.IsRegistrationPage());
         }
-     /*   [Test]
-        public void TransitionFromRegistrationToAuthorization()
-        {
-            MainPageMeth.ClickOnRegistButton();
-            RegistrationPageMeth.ClickOnUpperSingInButton();
-            Assert.IsTrue();
-        }
-        [Test]
-        public void EnteringValidValuesIntoRegistrationFieldsFirstPage()
-        {
-
-        }
-        [Test]
-        public void EnteringNotValidValuesIntoRegistrationFieldsFirstPage()
-        {
-        }*/
-
     }
 }
