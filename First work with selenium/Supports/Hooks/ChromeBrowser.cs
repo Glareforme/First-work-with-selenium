@@ -47,6 +47,11 @@ namespace ChromeTests.Supports.Hooks
         internal static void CloseDriver() => _chromedriver.Quit();
         internal static void GoBackOneStep() => _chromedriver.Navigate().Back();
         internal static void GoForwardOneStep() => _chromedriver.Navigate().Forward(); 
+        internal static void Colhoz()
+        {
+            GoBackOneStep();
+            GoForwardOneStep();
+        }
 
         internal static void MoveToElement(By selector)
         {

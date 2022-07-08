@@ -10,6 +10,12 @@ namespace ChromeTests
         [Test]
         public void CheckButtonsWork()
         {
+            MainPageMeth.ClickSecongRegistButton();
+            ChromeBrowser.GoBackOneStep();
+            ChromeBrowser.GoForwardOneStep();
+            MainPageMeth.ClickThirdRegistButton();
+            ChromeBrowser.GoBackOneStep();
+            ChromeBrowser.GoForwardOneStep();
             MainPageMeth.ClickOnRegistButton();
             Assert.IsTrue(RegistrationPageMeth.IsRegistrationPage());
             ChromeBrowser.GoBackOneStep();
@@ -17,13 +23,12 @@ namespace ChromeTests
             Assert.IsTrue(ClientSingInPageMeth.IsClientSingInPage());
             ChromeBrowser.GoBackOneStep();
             MainPageMeth.ClickOnBrowseTalantButton();
-            ChromeBrowser.GoBackOneStep();
-            //problem with load page
-          /*  MainPageMeth.ClickSecongRegistButton();
+            ChromeBrowser.Colhoz();
+            MainPageMeth.ClickSecongRegistButton();
             Assert.IsTrue(RegistrationPageMeth.IsRegistrationPage());
             ChromeBrowser.GoBackOneStep();
             MainPageMeth.ClickThirdRegistButton();
-            Assert.IsTrue(RegistrationPageMeth.IsRegistrationPage());*/
+            Assert.IsTrue(RegistrationPageMeth.IsRegistrationPage());
         }
         [TestCase("niyiv18448@krunsea.com")]
         public void CheckFieldForEmailWorkCorrect(string email)
