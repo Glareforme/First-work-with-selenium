@@ -1,6 +1,6 @@
 ﻿using ChromeTests.Supports.Hooks;
 using FirefoxTesting.Support.Locators;
-using System;
+
 namespace ChromeTests.Supports.PageObjects.Actions
 {
     public static class MainPageMeth
