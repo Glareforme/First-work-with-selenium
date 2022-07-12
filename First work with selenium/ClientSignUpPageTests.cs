@@ -4,7 +4,7 @@ using ChromeTests.Supports.PageObjects.Actions;
 
 namespace ChromeTests
 {
-    public class ClientSignInTests : Hooks
+    public class ClientSignUpTests : Hooks
     {
         [Test]
         public void IsRegistrationpageOpensFromMainPage()
