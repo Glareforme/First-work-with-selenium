@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using ChromeTests.Supports.Hooks;
+using ChromeTests.Supports.PageObjects.Actions;
 
 namespace ChromeTests
 {
@@ -8,7 +9,13 @@ namespace ChromeTests
         [Test]
         public void TryRegistrationWithCorrectData()
         {
-            
+            MainPageMeth.ClickOnRegistButton();
+            RegistrationPageMeth.FIrstNameInput();
+            RegistrationPageMeth.LastNameInput();
+            RegistrationPageMeth.EmailInput();
+            RegistrationPageMeth.PasswordAndConfPassInput();
+            RegistrationPageMeth.PhoneInput();
+            RegistrationPageMeth.GoToNextStepRegist();
         }
         [Test]
         public void TryRegistrationWithIncorrectDataOnFirstPAge() 

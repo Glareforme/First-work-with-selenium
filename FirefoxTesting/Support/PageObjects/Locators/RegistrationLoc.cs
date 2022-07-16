@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 
-
 namespace FirefoxTesting.Support.Locators
 {
     public static class RegistrationLoc
@@ -14,12 +13,16 @@ namespace FirefoxTesting.Support.Locators
         public static readonly By EmailField = By.XPath("//input[@type='email']");
         public static readonly By PasswordField = By.XPath("//input[@type='password'] [@name='password']");
         public static readonly By PasswordConfirmField = By.XPath("//input[@type='password'] [@name='password_confirm']");
-        public static readonly By PhoneNumberField = By.XPath("//input[@name='code']");
-        public static readonly By NextButton = By.XPath("//button [@type='subm it'] [text()='Next']");
+        public static readonly By PhoneNumberField = By.XPath("//input[@name='phone_number']");
+        public static readonly By NextButton = By.XPath("//button[@type='submit'] [text()='Next']");
         public static readonly By LowerLogInButton = By.XPath("//a [@href='/auth/signin'] [text()='Log In']");
     }
-    internal class RegistrationSecongPageLoc
+    public class RegistrationSecondPageLoc
     {
-        public readonly By _nameCompanyField = By.XPath("//input[@name='company_name']");
+        public static readonly By NameCompanyField = By.XPath("//input[@name='company_name']");
+        public static readonly By CompanyUrl = By.XPath("//input[@name='company_website']");
+        public static readonly By Address = By.XPath("//input[@name='location']");
+        public static readonly By IndustryPopUp = By.XPath("//input[@aria-haspopup='listbox']");
+        public static readonly By FinishRegistButton = By.XPath("//button[@type='submit']");
     }
 }
