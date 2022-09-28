@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.Extensions;
-using OpenQA.Selenium.Interactions;
 using System;
 
 namespace FirefoxTesting.Support.Hooks

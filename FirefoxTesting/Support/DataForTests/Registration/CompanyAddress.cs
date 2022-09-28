@@ -8,5 +8,6 @@ namespace NewModelTestFireFox.Support.DataForTests.Registration
 {
     internal class CompanyAddress
     {
+        
     }
 }

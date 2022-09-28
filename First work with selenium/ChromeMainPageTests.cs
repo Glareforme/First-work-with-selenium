@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using ChromeTests.Supports.Hooks;
 using ChromeTests.Supports.PageObjects.Actions;
-
+using System.Threading;
 
 namespace ChromeTests
 {
@@ -34,8 +34,9 @@ namespace ChromeTests
         public void CheckFieldForEmailWorkCorrect(string email)
         {
             MainPageMeth.InputToEmailField(email);
+            Thread.Sleep(3000);
             MainPageMeth.ClickThirdRegistButton();
-            Assert.IsTrue(MainPageMeth.IsEmailFieldIsEmpty());
+            Assert.IsTrue(!MainPageMeth.IsEmailFieldIsEmpty());
         }
     }
 }

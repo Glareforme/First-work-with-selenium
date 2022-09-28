@@ -18,7 +18,7 @@ namespace NewModelTestFireFox.Support.DataForTests.Registration
             string AllChar = CapitalLetters + SmallLetters + Digits + SpecialCharacters;
 
             int PasswordLength = random.Next(12, 18);
-            string password = "";
+            string password = "Test";
             for (int i = 0; i < 1; i++)
             {
                 StringBuilder sb = new StringBuilder();

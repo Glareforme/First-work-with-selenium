@@ -29,18 +29,15 @@ namespace ChromeTests.Supports.PageObjects.Actions
     }
     public static class RegistrationSecondPageMeth
     {
-        internal static void CompanyNameInput()
+        internal static void CompanyNameAndUrlInput()
         {
-            string companyName = "";//method
-            ChromeBrowser.GetDriver().FindElement(RegistrationSecondPageLoc.NameCompanyField).SendKeys("");
-        }
-        internal static void CompanyUrlInput()
-        {
-            ChromeBrowser.GetDriver().FindElement(RegistrationSecondPageLoc.CompanyUrl).SendKeys("");
+            string companyName = CompanyAndUrl.GenerateCompanyName();//method
+            ChromeBrowser.GetDriver().FindElement(RegistrationSecondPageLoc.NameCompanyField).SendKeys(companyName);
+            ChromeBrowser.GetDriver().FindElement(RegistrationSecondPageLoc.CompanyUrl).SendKeys(CompanyAndUrl.GenerateUrl(companyName));
         }
         internal static void AddressInput()
         {
-            ChromeBrowser.GetDriver().FindElement(RegistrationSecondPageLoc.Address).SendKeys("");
+            ChromeBrowser.GetDriver().FindElement(RegistrationSecondPageLoc.Address).SendKeys("23700 West Bluff Road, Channahon, IL, USA");
         }
         internal static void IndustrySelectInPopup()
         {
